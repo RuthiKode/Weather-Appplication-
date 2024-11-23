@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Results</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and general styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Center the container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Results page styling */
+        .result-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if data.error %}
+            <h2 class="error-message">Error: {{ data.error }}</h2>
+        {% else %}
+            <h2 class="result-title">Weather in {{ data.city }}, {{ data.country }}</h2>
+            <p><strong>Description:</strong> {{ data.description }}</p>
+            <p><strong>Temperature:</strong> {{ data.temperature }}°C</p>
+            <p><strong>Humidity:</strong> {{ data.humidity }}%</p>
+            <p><strong>Wind Speed:</strong> {{ data.wind_speed }} m/s</p>
+        {% endif %}
+        <a href="/" class="back-btn">Back to Home</a>
+    </div>
+</body>
+</html>
