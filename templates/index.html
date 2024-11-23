@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Tracker</title>
+</head>
+<body>
+    <h1>Real-Time Weather Tracker</h1>
+    <form action="/get_weather" method="POST">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+        <label for="country">Country Code:</label>
+        <input type="text" id="country" name="country" required placeholder="e.g., IN">
+        <button type="submit">Get Weather</button>
+    </form>
+</body>
+</html>
